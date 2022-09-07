@@ -14,16 +14,19 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form method="GET" action="results.html">
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Your Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <label for="firstname">Your First Name <span class="required-field">*</span></label>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35" required>
+                <label for="lastname">Your Last Name <span class="required-field">*</span></label>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35" required>
+                <label for="age">Your Age</label>
+                <input type="number" name="age" id="age" min="21" max="120">
+                <h5>Must be 21 or older to enter the contest</h5>
             </div>
             <fieldset>
                 <legend>Your Contact Info</legend>
                 <div>
-                    <label for="email">Your Email</label>
-                    <input type="email" id="email" name="email">
+                    <label for="email">Your Email <span class="required-field">*</span></label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div>
                     <label for="address">Your Street Address</label>
@@ -86,7 +89,7 @@
                         <option value="WY">Wyoming</option>
                     </datalist>
                     <label for="zip">Your Zipcode</label>
-                    <input type="text" id="zip" name="zip">
+                    <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="5-Digit US ZIP Code">
                 </div>
             </fieldset>
 
@@ -131,7 +134,8 @@
                     <label for="drinks">All-inclusive Drinks Package</label>
                 </div>
             </fieldset>
-            
+            <label>Your Secret Code <span class="required-field">*</span></label>
+            <input type="password" pattern="[0-9a-zA-Z]{6}" title="Alphanumeric Character Passcode" required>
             <input type="submit" value="Enter the Contest!">
         </form>
     </main>
